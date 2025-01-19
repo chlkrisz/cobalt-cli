@@ -15,7 +15,7 @@ jobs:
           python-version: 3.9
       - run: pip install -r requirements.txt pyinstaller
       - run: pyinstaller -i meow.ico --onefile --version-file version.rc cobalt.py
-      - run: ./dist/cobalt
+      - run: ./dist/cobalt --github-actions 1 https://youtu.be/dQw4w9WgXcQ
       - uses: actions/upload-artifact@v4
         with:
           path: dist/*

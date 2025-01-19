@@ -33,8 +33,13 @@ def main():
     parser.add_argument("--file-name-style", type=str, help="File name style", 
                         choices=["classic", "pretty", "basic", "nerdy"], 
                         default="pretty")
+    parser.add_argument("--github-actions", type=bool, help="GitHub Actions mode (Exits with code 0 instantly)", default=False)
 
     args = parser.parse_args()
+
+    if args.github_actions:
+        print("Hi :D")
+        sys.exit(0)
 
     if args.instance:
         instance = args.instance
